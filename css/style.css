@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  transition: .2s linear;
+}
+
+.hover-text-green:hover {
+  color: #198754 !important;
+}
+
+.focus-border-primary:focus {
+  border-color: #0b5ed7 !important;
+}
+:disabled {
+  cursor: no-drop;
+}
+
+.active-scale-098:active {
+  transform: scale(.96);
+}
+
+/* Toast Message Css start */
+:root {
+  --success-600: #13c56b;
+  --warning-600: #ffa500;
+  --danger-600: #ed5e5e;
+  --info-600: #2563eb;
+}
+
+ #toast-container {
+  position: fixed;
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 9999;
+}
+.toast-message {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.25, 1.35);
+  width: 300px;
+  transform: translateX(calc(100% + 20px));
+  overflow: hidden;
+  background-color: #fff;
+  border-inline-start: 3px solid var(--success-600);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  padding-block: 12px;
+  padding-inline: 16px;
+  border-radius: 6px;
+}
+.toast-message.active {
+  transform: translateX(0);
+}
+.toast-message.active .progress__bar::before {
+  animation: progress-bar 3.5s linear forwards;
+  visibility: visible;
+  opacity: 1;
+}
+.toast-message:hover .progress__bar::before {
+  animation-play-state: paused;
+}
+.toast-message__content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.toast-message__icon {
+  font-size: 24px;
+  color: var(--success-600);
+  line-height: 1;
+}
+.toast-message__title {
+  margin-bottom: 0;
+  font-size: 18px !important;
+}
+.toast-message__close {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 16px;
+}
+.toast-message__text {
+  color: #42494f;
+  font-size: 14px;
+}
+.progress__bar {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+}
+.progress__bar::before {
+  content: "";
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--success-600);
+  visibility: hidden;
+  opacity: 0;
+}
+@keyframes progress-bar {
+  from {
+    width: 100%;
+ }
+  to {
+    width: 0%;
+ }
+}
+.success {
+  border-color: var(--success-600);
+}
+.success .toast-message__icon {
+  color: var(--success-600) !important;
+}
+.success .progress__bar::before {
+  background-color: var(--success-600);
+}
+.danger {
+  border-color: var(--danger-600);
+}
+.danger .toast-message__icon {
+  color: var(--danger-600) !important;
+}
+.danger .progress__bar::before {
+  background-color: var(--danger-600);
+}
+.warning {
+  border-color: var(--warning-600);
+}
+.warning .toast-message__icon {
+  color: var(--warning-600) !important;
+}
+.warning .progress__bar::before {
+  background-color: var(--warning-600);
+}
+.info {
+  border-color: var(--info-600);
+}
+.info .toast-message__icon {
+  color: var(--info-600) !important;
+}
+.info .progress__bar::before {
+  background-color: var(--info-600);
+}
+/* Toast Message Css End */
+
