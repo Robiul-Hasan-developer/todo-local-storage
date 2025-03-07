@@ -77,7 +77,8 @@ const addTodo = (event) => {
     localStorage.setItem('myTodos',  JSON.stringify(todos));
     
     setTimeout(() => {
-        addTodoBtn.innerHTML = "Add Todo"
+        addTodoBtn.innerHTML = "Add Todo";
+        addTodoBtn.disabled = true;
     }, 300);
     toastMessage('success', 'Success', `You added todo successfully!`, 'ph-fill ph-check-circle');
     todoInput.value = "";
